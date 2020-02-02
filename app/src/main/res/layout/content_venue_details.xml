@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.android.shiyas.bookaground.activities.VenueDetailsActivity"
+    tools:showIn="@layout/activity_venue_details">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/ratingLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp">
+
+            <TextView
+                android:id="@+id/averageRatingTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/venueLocation"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="16dp"
+                android:layout_centerVertical="true"
+                android:fontFamily="sans-serif-thin"
+                android:text="4.4"
+                android:textColor="@color/orange"
+                android:textStyle="bold" />
+
+            <RatingBar
+                android:id="@+id/ratingBar"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/venueLocation"
+                android:layout_marginEnd="5dp"
+                android:rating="4.4"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/averageRatingTextView"
+                android:theme="@style/RatingBar" />
+
+            <TextView
+                android:id="@+id/publicRatingTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/venueLocation"
+                android:layout_marginEnd="5dp"
+                android:layout_toEndOf="@+id/ratingBar"
+                android:fontFamily="sans-serif-thin"
+                android:layout_centerVertical="true"
+                android:textStyle="bold"
+                android:text="56 Ratings"/>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="16dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_centerVertical="true"
+                android:foreground="?attr/selectableItemBackground"
+                app:cardBackgroundColor="@color/light_gray"
+                app:cardPreventCornerOverlap="false"
+                app:cardUseCompatPadding="true"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="3dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Rate"
+                    android:padding="2dp"
+                    android:textColor="@android:color/black" />
+
+            </android.support.v7.widget.CardView>
+
+        </RelativeLayout>
+
+        <com.synnapps.carouselview.CarouselView
+            android:id="@+id/carouselView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_below="@+id/ratingLayout"
+            app:fillColor="#FFFFFFFF"
+            app:pageColor="#00000000"
+            app:radius="4dp"
+            app:slideInterval="4000"
+            app:strokeColor="#FF777777"
+            app:strokeWidth="1dp" />
+
+        <LinearLayout
+            android:id="@+id/addressLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal"
+            android:layout_below="@+id/carouselView">
+
+            <ImageButton
+
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/ic_baseline_location_on_24px"
+                android:background="@null"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:layout_gravity="center_vertical"
+                android:text="Chanthavila, Near Kinfra Video Park"
+                android:layout_marginStart="5dp"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/seeMap"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:layout_gravity="center_vertical"
+            android:text="See Map"
+            android:clickable="true"
+            android:focusable="true"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:paddingStart="5dp"
+            android:layout_marginEnd="16dp"
+            android:foreground="?attr/selectableItemBackground"
+            android:textColor="@color/yellow"
+            android:layout_below="@+id/addressLocation"
+            android:layout_marginStart="46dp"/>
+
+        <LinearLayout
+            android:id="@+id/timingLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="15dp"
+            android:orientation="horizontal"
+            android:layout_below="@+id/seeMap">
+
+            <ImageButton
+
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/ic_baseline_access_time_24px"
+                android:background="@null"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:layout_gravity="center_vertical"
+                android:text="Timing - 6:00 AM - 11:30 PM"
+                android:layout_marginStart="5dp"/>
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/seperator1"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:background="@color/grey"
+            android:layout_marginBottom="15dp"
+            android:layout_below="@+id/timingLayout" />
+
+        <LinearLayout
+            android:id="@+id/availableSportsLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@+id/seperator1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:layout_gravity="center_vertical"
+                android:text="Available Sports"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="10dp"
+                android:textColor="@android:color/black"
+                android:layout_marginStart="16dp"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/availableRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"/>
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/seperator2"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:background="@color/grey"
+            android:layout_marginBottom="15dp"
+            android:layout_below="@+id/availableSportsLayout" />
+
+        <LinearLayout
+            android:id="@+id/aboutVenueLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="60dp"
+            android:layout_below="@+id/seperator2">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:layout_gravity="center_vertical"
+                android:text="About Venue"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="10dp"
+                android:textColor="@android:color/black"
+                android:layout_marginStart="16dp"/>
+
+            <TextView
+                android:id="@+id/facilityDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="10dp"
+                android:text="Balls and bibs provided for free."/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/venueFacilityRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"/>
+
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+
+
+</android.support.v4.widget.NestedScrollView>
